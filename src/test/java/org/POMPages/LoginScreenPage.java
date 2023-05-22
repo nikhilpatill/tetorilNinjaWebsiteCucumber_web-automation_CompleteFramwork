@@ -19,29 +19,34 @@ import org.testng.Reporter;
 
 public class LoginScreenPage {
 	
+	
+	
 	public static  WebDriver driver;
 	//webElemets 
-	@FindBy(xpath="//input[@name=\"username\"]")
+	@FindBy(id="input-email")
      private WebElement username;
 	
-	@FindBy(xpath="//input[@name=\"password\"]")
+	@FindBy(id="input-password")
 	private WebElement password ;
 	
 	
- 	@FindBy(xpath="//button[@type=\"submit\"]")
+	@FindBy(xpath="//input[@value='Login']")
 	private WebElement submit ;
 	
-	@FindBy(xpath="//img[@alt=\"orangehrm-logo\"]")
-	private List<WebElement> lobo ;
+	@FindBy(xpath="//div[contains(@class,'alert-dismissible')]")
+	private WebElement warningMessage;
 	
-
- 	@FindBy(xpath="//h6[text()=\"Dashboard\"]")
-	private WebElement dashboadTxt ;
-
-
- 	@FindBy(xpath="//h5[text()=\"Login\"]")
-	private WebElement LoginTxt ;
-
+ 	@FindBy(xpath="//h2[text()=\"Returning Customer\"]")
+	private WebElement ReturningTXT ;
+ 	
+	@FindBy(xpath="//a[@title=\"My Account\"]")
+	private WebElement My_AccountTXT ;
+ 	
+	
+ 	
+	@FindBy(xpath="//a[text()=\"Login\"]")
+	private WebElement LoginTXT ;
+ 	
 	
 	//Contructor  
 	
@@ -57,6 +62,16 @@ public class LoginScreenPage {
 	
 	
 	//action methods ()
+	
+	public void My_AccountTXT_Click()
+	{
+		My_AccountTXT.click();
+	}
+	
+	public void  LoginTXT_Click()
+	{
+		LoginTXT.click();
+	}
  	
  	public String varify_Login_Title()
  	{ return  driver.getTitle();
@@ -124,21 +139,15 @@ public class LoginScreenPage {
 	      return submit.isDisplayed();   
  	}
 	
-	public String varify_Login_DhashBoadTxt_()
+	
+	
+	public String varify_ReturningTXT()
 	{
 		
-		WaitGenericMethod wait =new WaitGenericMethod();
-		wait.waitForInvisiblityWebElement(driver, 20, "xpath", "dashboadTxt");
-		return dashboadTxt.getText();
+		return ReturningTXT.getText();
 		
 	}
 	
-	public String varify_Login_LoginTxt_()
-	{
-		
-		return LoginTxt.getText();
-		
-	}
 	
 	
 
@@ -177,22 +186,8 @@ public class LoginScreenPage {
 	
 	
 	
-	public boolean varify_Login_lobo()
- 	{
- 		for(int i=0;i<2;i++)
- 		{
- 			if(!lobo.get(i).isDisplayed())
- 			{
- 				return false;
- 				
- 			}
- 			
- 		}
- 		
- 		return true ;
-		 
 		
- 	}
+ 	
  	
  
 }

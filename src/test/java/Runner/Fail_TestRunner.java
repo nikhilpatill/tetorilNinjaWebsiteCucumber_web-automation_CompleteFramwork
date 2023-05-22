@@ -12,7 +12,7 @@ import io.cucumber.junit.*;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		
-		features ="src/test/resourse/org.Feature/Register.feature",
+		features = {"@target/FailedtestRunner.txt"},
 		
 		glue={ "org/StepDefination" },
 		
@@ -20,14 +20,12 @@ import io.cucumber.junit.*;
 		plugin= {"pretty", "html:target/html_Report/Cucumber.html",
 				           "junit:target/xml_Report/Cucumber.xml",
 		                   "json:target/Json_Report/Cucumber.json",
-		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-		"rerun:target/FailedtestRunner.txt"
-		},                           
+		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},                           
 		
 		
 		dryRun=false,
 		
-		tags="@nikhil"
+		tags= "@nikhil"
 		
 	
 		
@@ -43,7 +41,7 @@ import io.cucumber.junit.*;
 
 
 
-public class testRunner {
+public class Fail_TestRunner {
 	
 	
 	

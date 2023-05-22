@@ -177,6 +177,7 @@
 					 <configuration>
                       <includes>
                  <include>testRunner.java</include>
+                 <include>Fail_TestRunner</include>
                        </includes>
                    </configuration>
 				</plugin>

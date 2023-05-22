@@ -13,6 +13,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.asserts.SoftAssert;
 
+
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
@@ -23,33 +24,35 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LoginSceenStepDef {
-	private WebDriver driver;
-	private startUp sb;
-	private LoginScreenPage lp;
-	private SoftAssert ac;
-	private Scenario scn;
 	
+	public static  startUp sb;
+	public static  SoftAssert ac;
+	public static Scenario scn;
+	public static WebDriver driver;
+	public LoginScreenPage lp;
+	
+
 
 	@Before(order=1)
 	public void beforehook() {
 		sb = new startUp();
-		// driver=sb.InitalizeBrowser("ch"); //user property as well
-		driver = sb.startUp("ch", "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		// driver=sb.initalize("ch");//user property as well
+		driver = sb.startUp("ch", "http://tutorialsninja.com/demo/");
 
 	}
 	
 	@Before(order=2)
 	public void befor_EachStepe_hook(Scenario scn) {
 		sb = new startUp();
-		lp = new LoginScreenPage(driver);
 		ac = new SoftAssert();
+		lp = new LoginScreenPage(driver);
 		this.scn=scn;
 
 	}
 
 	@After(order=5) // hooks after exicute each senario
 	public void afterhook() {
-		driver.quit();
+		
 
 	}
 
@@ -60,9 +63,9 @@ public class LoginSceenStepDef {
       if(scn.isFailed()) {
 
     	
-			// byte[]scntype = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+			 byte[]scntype = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
     	    // File scntype = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-           String scntype= ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+          // String scntype= ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
            String scnName = scn.getName().replaceAll("", "") + ".png";
            scn.attach(scntype, "image/png", scnName);
             
@@ -75,11 +78,16 @@ public class LoginSceenStepDef {
 
 	
 	
+	
+	
+	
+	
 	@Given("user_is_on_login_page")
 	public void user_is_on_login_page() {
+		lp = new LoginScreenPage(driver);
 		
-		System.out.println("url hit successfully");
-	  
+		lp.My_AccountTXT_Click();
+		 lp.LoginTXT_Click();
 		
 	}
 
@@ -88,7 +96,7 @@ public class LoginSceenStepDef {
 	public void varify_login_is_displayed(String LoginpageFileds) {
 		if(LoginpageFileds.equalsIgnoreCase("PasswordFiled"))
 		{
-			 ac.assertTrue(lp.varify_Login_PasswordFiled_ISDisplayed());
+			ac.assertTrue(lp.varify_Login_PasswordFiled_ISDisplayed());
 		}
 		
 		if(LoginpageFileds.equalsIgnoreCase("UsernameFiled"))
@@ -98,10 +106,10 @@ public class LoginSceenStepDef {
 		
 		if(LoginpageFileds.equalsIgnoreCase("btnFiled"))
 		{
-			 ac.assertTrue(lp.varify_Login_btnFiled_ISDisplayed());
+			ac.assertTrue(lp.varify_Login_btnFiled_ISDisplayed());
 		}
 		
-		ac.assertAll();
+	       ac.assertAll();
 
 		
 	   
@@ -114,7 +122,7 @@ public class LoginSceenStepDef {
 		{
 			
 			 ac.assertEquals(lp.varify_Login_Title(),Expectedfiled);
-			 scn.log("expected condition pass"+Expectedfiled);
+			scn.log("expected condition pass"+Expectedfiled);
 			
 		}
 		if(LoginpageFileds.equalsIgnoreCase("Url"))
@@ -128,8 +136,8 @@ public class LoginSceenStepDef {
 		if(LoginpageFileds.equalsIgnoreCase("Txt"))
 		{
 			
-			 ac.assertEquals(lp.varify_Login_LoginTxt_(),Expectedfiled);
-			 scn.log("expected condition pass"+Expectedfiled);
+			 ac.assertEquals(lp.varify_ReturningTXT(),Expectedfiled);
+		     scn.log("expected condition pass"+Expectedfiled);
 				
 		}
 	   
@@ -144,17 +152,17 @@ public class LoginSceenStepDef {
 		{
 			
 			lp.varify_Login_UsernameFiled_Sendkays(Expectedfiled);
-			 scn.log("expected condition pass"+Expectedfiled);
+			scn.log("expected condition pass"+Expectedfiled);
 				
 		}
 		
 		if(LoginpageFileds.equalsIgnoreCase("PasswordFiled"))
-			 scn.log("expected condition pass"+Expectedfiled);
+			scn.log("expected condition pass"+Expectedfiled);
 		
 		{
 			
-		lp.varify_Login_PasswordFiled_sendKeys(Expectedfiled);
-		 scn.log("expected condition pass"+Expectedfiled);
+			lp.varify_Login_PasswordFiled_sendKeys(Expectedfiled);
+		     scn.log("expected condition pass"+Expectedfiled);
 			
 		}
 		
@@ -166,7 +174,7 @@ public class LoginSceenStepDef {
 	
 	@Then("varify Login Click")
 	public void varify_login_click() {
-		 lp.varify_Login_Click();
+		lp.varify_Login_Click();
 	}
 	
 	@Then("varify {string} kay")
@@ -179,7 +187,7 @@ public class LoginSceenStepDef {
 	    
 	   if(LoginpageFileds.equalsIgnoreCase("Enter"))
 	   {
-				lp.varify_Enter_kay();
+		   lp.varify_Enter_kay();
 		}
 	  
 	   
@@ -193,33 +201,27 @@ public class LoginSceenStepDef {
 				if(LoginpageFileds.equalsIgnoreCase("username"))
 				{
 					 ac.assertEquals(lp.varify_Login_UsernameFiled_placeholder_ISDisplayed(),Expected);
-					 scn.log("expected condition pass"+Expected);
+					scn.log("expected condition pass"+Expected);
 						
 				}
 			    
 				  
 				if(LoginpageFileds.equalsIgnoreCase("Pasword"))
 				{
-					 ac.assertEquals(lp.varify_Login_passwordFiled_placeholder_ISDisplayed(),Expected);
-					 scn.log("expected condition pass"+Expected);
+					ac.assertEquals(lp.varify_Login_passwordFiled_placeholder_ISDisplayed(),Expected);
+					scn.log("expected condition pass"+Expected);
 						
 				}
 			    
-				ac.assertAll();
+			ac.assertAll();
 
 	}
 	
 
 
 
-	@Then("varify  Login DhashBoadTxt IsDisplayed {string}")
-	public void varify_login_dhash_boad_txt_is_displayed(String Expectedfiled) {
-	    
-		 ac.assertEquals(lp.varify_Login_DhashBoadTxt_(),Expectedfiled);
-		 scn.log("expected condition pass"+Expectedfiled);
-		 ac.assertAll();
 
-	}
+	
 
 
 

@@ -97,5 +97,63 @@ public class startUp {
 		return driver;
 
 	}
+	
+	public WebDriver Hiturl(String Url) {
 
-}
+		WebDriver driver = null;
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		driver.get(Url);
+
+		return driver;
+
+	}
+	
+	public ArrayList<String> getAllTextFromList(List<WebElement> allEles) {
+		
+		 ArrayList<String> ar = new ArrayList<String>();
+		 for(int i=0; i<allEles.size();i++) {
+			ar.add(allEles.get(i).getText());
+		 }
+		 return ar;
+	}
+	
+
+	public WebDriver initalize(String bname) {
+
+		WebDriver driver = null;
+
+		if (bname.equalsIgnoreCase("ch") || bname.equalsIgnoreCase("Chrome")) {
+			ChromeOptions option = new ChromeOptions();
+			option.addArguments("--remote-allow-origins=*");
+			option.addArguments("start-maximized");
+			driver = new ChromeDriver(option);
+
+		} else if (bname.equalsIgnoreCase("ff") || bname.equalsIgnoreCase("Firefox")) {
+			FirefoxOptions option = new FirefoxOptions();
+			option.addArguments("start-maximized");
+			driver = new FirefoxDriver();
+
+		} else if (bname.equalsIgnoreCase("ed") || bname.equalsIgnoreCase("edge")) {
+			EdgeOptions option = new EdgeOptions();
+			option.addArguments("start-maximized");
+			driver = new EdgeDriver();
+
+		} else {
+			System.out.println("input not match");
+		}
+
+		// driver.manage().window().maximize();
+		// it is work on selenium 3.0
+		// driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		// it is work on selenium 4.0 on word
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		
+
+		return driver;
+
+	}
+
+
+	}
+
+
