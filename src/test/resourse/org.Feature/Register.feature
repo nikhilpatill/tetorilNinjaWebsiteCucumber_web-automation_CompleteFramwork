@@ -30,6 +30,96 @@ Feature: register page
     And varify Continue Click
     And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=account/success"
     
+    @nikhil
+     Scenario: varify register Functionality First Name is blank
+    Given user_is_on_register_page
+    When varify register "First_Name" Sendkeys ""
+    And varify register "Last_Name" Sendkeys "patil"
+    And varify register "E_Mail" Sendkeys "sagrl@gmail.com"
+    And varify register "Telephone" Sendkeys "7798564646"
+    And varify register "Password" Sendkeys "sag@123"
+    And varify register "Password_Confirm" Sendkeys "sag@123"
+    Then varify Subscribe Click
+    And varify Privacy_Policy_checked Click
+    And varify Continue Click
+    And varify register "First_Name" warning_message IsDisplayed "First Name must be between 1 and 32 characters!"
+    And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=account/register"
+  
+    
+     Scenario: varify register Functionality Last_Name Name is blank
+    Given user_is_on_register_page
+    When varify register "First_Name" Sendkeys "sagar"
+    And varify register "Last_Name" Sendkeys ""
+    And varify register "E_Mail" Sendkeys "sagrl@gmail.com"
+    And varify register "Telephone" Sendkeys "7798564646"
+    And varify register "Password" Sendkeys "sag@123"
+    And varify register "Password_Confirm" Sendkeys "sag@123"
+    Then varify Subscribe Click
+    And varify Privacy_Policy_checked Click
+    And varify Continue Click
+    And varify register "Last_Name" warning_message IsDisplayed "Last Name must be between 1 and 32 characters!" 
+    And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=account/register"
+   
+     Scenario: varify register Functionality E_Mail Name is blank
+    Given user_is_on_register_page
+    When varify register "First_Name" Sendkeys ""
+    And varify register "Last_Name" Sendkeys "patil"
+    And varify register "E_Mail" Sendkeys ""
+    And varify register "Telephone" Sendkeys "7798564646"
+    And varify register "Password" Sendkeys "sag@123"
+    And varify register "Password_Confirm" Sendkeys "sag@123"
+    Then varify Subscribe Click
+    And varify Privacy_Policy_checked Click
+    And varify Continue Click
+    And varify register "E_Mail" warning_message IsDisplayed "E-Mail Address does not appear to be valid!"
+    And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=account/register"
+  
+    
+     Scenario: varify register Functionality Telephone Name is blank
+    Given user_is_on_register_page
+    When varify register "First_Name" Sendkeys ""
+    And varify register "Last_Name" Sendkeys "patil"
+    And varify register "E_Mail" Sendkeys "sagrl@gmail.com"
+    And varify register "Telephone" Sendkeys ""
+    And varify register "Password" Sendkeys "sag@123"
+    And varify register "Password_Confirm" Sendkeys "sag@123"
+    Then varify Subscribe Click
+    And varify Privacy_Policy_checked Click
+    And varify Continue Click
+    And varify register "Telephone" warning_message IsDisplayed "Telephone must be between 3 and 32 characters!"
+    And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=account/register"
+  
+   
+     Scenario: varify register Functionality Password Name is blank
+    Given user_is_on_register_page
+    When varify register "First_Name" Sendkeys ""
+    And varify register "Last_Name" Sendkeys "patil"
+    And varify register "E_Mail" Sendkeys "sagrl@gmail.com"
+    And varify register "Telephone" Sendkeys "7798564646"
+    And varify register "Password" Sendkeys ""
+    And varify register "Password_Confirm" Sendkeys "sag@123"
+    Then varify Subscribe Click
+    And varify Privacy_Policy_checked Click
+    And varify Continue Click
+    And varify register "Password" warning_message IsDisplayed "Password must be between 4 and 20 characters!"
+    And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=account/register"
+  
+   
+     Scenario: varify register Functionality Password_Confirm Name is blank
+    Given user_is_on_register_page
+    When varify register "First_Name" Sendkeys "sagar"
+    And varify register "Last_Name" Sendkeys "patil"
+    And varify register "E_Mail" Sendkeys "sagrl@gmail.com"
+    And varify register "Telephone" Sendkeys "7798564646"
+    And varify register "Password" Sendkeys "sag@123"
+    And varify register "Password_Confirm" Sendkeys ""
+    Then varify Subscribe Click
+    And varify Privacy_Policy_checked Click
+    And varify Continue Click
+   
+    And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=account/register"
+  
+  
   
   
   Scenario: varify register Functionality is blank warning message Display
@@ -51,7 +141,7 @@ Feature: register page
     And varify register "Privacy_Policy" warning_message IsDisplayed "Warning: You must agree to the Privacy Policy!"
   
   
-  Scenario: varify register Functionality click Yes radio btn     [TC_RF_005]
+  Scenario: varify register Functionality click Yes radio btn     
     Given user_is_on_register_page
     When varify register "First_Name" Sendkeys "saga"
     And varify register "Last_Name" Sendkeys "patil"
@@ -106,7 +196,7 @@ Feature: register page
     And varify register "Password" Sendkeys "sag@123"
     And varify register "Password_Confirm" Sendkeys "sag@123"
     Then varify Subscribe yes_Radio_btn Click 
-   # And varify Privacy_Policy_checked Click
+   #And varify Privacy_Policy_checked Click
     And varify Continue Click
     And varify register "Privacy_Policy" warning_message IsDisplayed "Warning: You must agree to the Privacy Policy!"
   
@@ -146,13 +236,41 @@ Feature: register page
    
     And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=account/success"
  
-  #this is issue for scorlling  
-   @nikhil
+  
     Scenario: varify register Functionality different ways of navigating to Register Account page   
     Given user_is_on_register_page
-    Then varify "About_Us" Clickk
-    And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=information/information&information_id=4"
     
+    Then varify "About_Us" Clickk
+    And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=information/information&information_id=4"              
+    
+    Then varify "Delivery_Information" Clickk
+    And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=information/information&information_id=6"
+    
+    Then varify "Privacy_Policy" Clickk
+    And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=information/information&information_id=3"
+    
+   Then varify "Terms_Conditions" Clickk
+    And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=information/information&information_id=5"
+    
+   Then varify "Contact_Us" Clickk
+    And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=information/contact"
+    
+   Then varify "Returns" Clickk
+    And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=account/return/add"
+    
+   Then varify "Site_Map" Clickk
+    And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=information/sitemap"
+    
+   Then varify "Affiliate" Clickk
+    And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=affiliate/login"
+    
+   Then varify "Brands" Clickk
+    And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=product/manufacturer"
+    
+   Then varify "GiftCertificates" Clickk
+    And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=account/voucher"
+    
+ 
   
   
   
@@ -195,5 +313,9 @@ Feature: register page
     And Verify "Telephone" register_page palceholder "Telephone"
     And Verify "Password" register_page palceholder "Password"
     And Verify "Confirm" register_page palceholder "Last Name"
+    
+    
+
+    
     
     

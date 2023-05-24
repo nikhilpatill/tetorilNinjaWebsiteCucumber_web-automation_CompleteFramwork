@@ -486,65 +486,78 @@ public class RegisterScreenPage {
 
 	public void About_Us_click()
 	{
-		WaitGenericMethod wait =new WaitGenericMethod();
-		ActionClassGenericMethod ac=new ActionClassGenericMethod();
-		wait.waitForInVisibilityByType(driver, 15, "xpath", "//a[text()=\"About Us\"]");
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();",About_Us);
+		
+		WebElement scoll= driver.findElement(By.tagName("html"));
+		scoll.sendKeys(Keys.PAGE_DOWN);
 		About_Us.click();	 
 		
 	}
 
-	public void  Delivery_Information_click()
+	public void  Delivery_Informationlink_click()
 	{
+		WebElement scoll= driver.findElement(By.tagName("html"));
+		scoll.sendKeys(Keys.PAGE_DOWN);
 		 Delivery_Information.click();	 
 		
 	}
 
-	public void  Terms_Conditions_click()
+	public void  Terms_Conditionslink_click()
 	{
+		WebElement scoll= driver.findElement(By.tagName("html"));
+		scoll.sendKeys(Keys.PAGE_DOWN);
 		Terms_Conditions.click();	 
 		
 	}
 
-	public void  Privacy_Policy_click()
+	public void  Privacy_Policylink_click()
 	{
+		WebElement scoll= driver.findElement(By.tagName("html"));
+		scoll.sendKeys(Keys.PAGE_DOWN);
 		Privacy_Policy.click();	 
 		
 	}
 
-	public void  Contact_Us_click()
+	public void  Contact_Uslink_click()
 	{
+		WebElement scoll= driver.findElement(By.tagName("html"));
+		scoll.sendKeys(Keys.PAGE_DOWN);
 		Contact_Us.click();
 		
 	}
 
-	public void  Returns_click()
+	public void  Returnslink_click()
 	{
-			 
+		WebElement scoll= driver.findElement(By.tagName("html"));
+		scoll.sendKeys(Keys.PAGE_DOWN);	 
 		Returns.click();
 	}
 
-	public void  Site_Map_click()
+	public void  Site_Maplink_click()
 	{
+		WebElement scoll= driver.findElement(By.tagName("html"));
+		scoll.sendKeys(Keys.PAGE_DOWN);
 		Site_Map.click();	 
 		
 	}
 
-	public void  Brands_click()
+	public void  Brandslink_click()
 	{
-			 
+		WebElement scoll= driver.findElement(By.tagName("html"));
+		scoll.sendKeys(Keys.PAGE_DOWN); 
 		Brands.click();
 	}
 
-	public void  Gift_Certificates_click()
+	public void  Gift_Certificateslink_click()
 	{
-			 
+		WebElement scoll= driver.findElement(By.tagName("html"));
+		scoll.sendKeys(Keys.PAGE_DOWN);	 
 		Gift_Certificates.click();
 	}
 
-	public void  Affiliate_click()
+	public void  Affiliatelink_click()
 	{
+		WebElement scoll= driver.findElement(By.tagName("html"));
+		scoll.sendKeys(Keys.PAGE_DOWN);
 		Affiliate.click(); 
 		
 	}

@@ -35,7 +35,7 @@ public class RegisterSceenStepDef {
 	@Before(order=1)
 	public void beforehook() {
 		sb = new startUp();
-		// driver=sb.initalize("ch");//user property as well
+		
 		driver = sb.startUp("ch", "http://tutorialsninja.com/demo/");
 
 	}
@@ -52,6 +52,7 @@ public class RegisterSceenStepDef {
 	@After(order=5) // hooks after exicute each senario
 	public void afterhook() {
 	
+		driver.quit();
 		
 	}
 
@@ -331,60 +332,57 @@ public class RegisterSceenStepDef {
 		}
 		
 
-		if(Linkname.equalsIgnoreCase(""))
+		if(Linkname.equalsIgnoreCase("Delivery_Information"))
 		{
-		  
+			Rp.Delivery_Informationlink_click();
 		}
 	  
 
-		if(Linkname.equalsIgnoreCase(""))
+		if(Linkname.equalsIgnoreCase("Privacy_Policy"))
 		{
-		   
+			Rp.Privacy_Policylink_click();
 		}
 	  
 
-		if(Linkname.equalsIgnoreCase(""))
+		if(Linkname.equalsIgnoreCase("Terms_Conditions"))
 		{
-		  
+			Rp.Terms_Conditionslink_click();
 		}
 	  
 
-		if(Linkname.equalsIgnoreCase(""))
+		if(Linkname.equalsIgnoreCase("Contact_Us"))
 		{
-		   
+			Rp.Contact_Uslink_click();
 		}
 	  
 
-		if(Linkname.equalsIgnoreCase(""))
+		if(Linkname.equalsIgnoreCase("Returns"))
 		{
-		   Rp.About_Us_click();
+			Rp.Returnslink_click();
 		}
 	  
 
-		if(Linkname.equalsIgnoreCase(""))
+		if(Linkname.equalsIgnoreCase("Site_Map"))
 		{
-		   Rp.About_Us_click();
+			Rp.Site_Maplink_click();
 		}
 
-		if(Linkname.equalsIgnoreCase(""))
+		if(Linkname.equalsIgnoreCase("Affiliate"))
 		{
-		   Rp.About_Us_click();
+			Rp.Affiliatelink_click();
 		}
 
-		if(Linkname.equalsIgnoreCase(""))
+		if(Linkname.equalsIgnoreCase("Brands"))
 		{
-		   Rp.About_Us_click();
+			Rp.Brandslink_click();
 		}
 
-		if(Linkname.equalsIgnoreCase(""))
+		if(Linkname.equalsIgnoreCase("GiftCertificates"))
 		{
-		  
+			Rp.Gift_Certificateslink_click();
 		}
 
-		if(Linkname.equalsIgnoreCase(""))
-		{
-		  
-		}
+		
 	  
 	}
 	
