@@ -7,6 +7,7 @@ import org.ActionClassUtility.ActionClassGenericMethod;
 import org.BaseUtility.startUp;
 import org.WaitUtility.WaitGenericMethod;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -68,7 +69,90 @@ public class RegisterScreenPage {
 	
  	@FindBy(xpath="//b[normalize-space()='Privacy Policy']")
 	private WebElement Privacy_Policy_Link;
- 	//--------------------------------------------------------------------------
+ 	
+ 	@FindBy(xpath="//div[text()=\"First Name must be between 1 and 32 characters!\"]")
+	private WebElement First_Name_warning_message ;
+ 	
+ 	@FindBy(xpath="//div[text()=\"Last Name must be between 1 and 32 characters!\"]")
+	private WebElement Last_Name_warning_message ;
+ 	
+ 	@FindBy(xpath="//div[text()=\"Telephone must be between 3 and 32 characters!\"]")
+	private WebElement Telephone_warning_message ;                                          //Telephone_warning_message
+ 	                                                                                        //Password_warning_message
+ 	@FindBy(xpath="//div[text()=\"Password must be between 4 and 20 characters!\"]")        //Password_warning_message
+	private WebElement Password_warning_message ;       
+ 	
+	@FindBy(xpath="//div[text()=\"E-Mail Address does not appear to be valid!\"]")        //Password_warning_message
+	private WebElement E_Mail_warning_message ;                                           //Privacy_Policy_warning_message
+ 	//Privacy_Policy_warning_message
+ 	
+ 	@FindBy(xpath="//div[text()=\"Warning: You must agree to the Privacy Policy!\"]")
+	private WebElement Privacy_Policy_warning_message ;
+ 	
+ 	//div[text()="Warning: E-Mail Address is already registered!"]
+ 	@FindBy(xpath="//div[text()=\"Warning: E-Mail Address is already registered!\"]")        //Password_warning_message
+	private WebElement E_Mail_warning_message_already_registered;   
+ 	
+ 	
+	@FindBy(xpath="//label[@class=\"radio-inline\"]/input[@value=\"1\"]")
+	private WebElement Yes_radio_btn ;
+ 	
+	
+	@FindBy(xpath="//a[text()=\"Subscribe / unsubscribe to newsletter\"]")
+	private WebElement Subscribe_unsubscribe_to_newsletter ;
+	
+	@FindBy(xpath="//div/a[text()=\"My Account\"]")
+	private WebElement My_Account ;
+ 	
+	//div[@class="list-group"]/a[2]
+	@FindBy(xpath="//div[@class=\"list-group\"]/a[2]")
+	private WebElement Register_dropdownmenu ;
+	
+	@FindBy(xpath="//div[@class=\"list-group\"]/a[4]")
+	private WebElement My_Account_dropdownmenu ;
+	
+	//a[@href="https://tutorialsninja.com/demo/index.php?route=account/register"and text()="Continue"]
+	
+	@FindBy(xpath="//a[@href=\"https://tutorialsninja.com/demo/index.php?route=account/register\"and text()=\"Continue\"]")
+	private WebElement New_Customer_Continue ;
+	
+	
+ 	//----------------------------------footer section textlinks--------------------------------------
+	
+	//a[text()="About Us"]
+	@FindBy(xpath="//a[text()=\"About Us\"]")
+	private WebElement About_Us ;
+	
+	
+	@FindBy(xpath="//a[text()=\"Delivery Information\"]")
+	private WebElement Delivery_Information ;
+	
+	
+	
+	@FindBy(xpath="//a[text()=\"Privacy Policy\"]")
+	private WebElement Privacy_Policy ;
+	
+	@FindBy(xpath="//a[text()=\"Terms & Conditions\"]")
+	private WebElement Terms_Conditions ;
+	
+	@FindBy(xpath="//a[text()=\"Contact Us\"]")
+	private WebElement Contact_Us ;
+	
+	@FindBy(xpath="//a[text()=\"Returns\"]")
+	private WebElement Returns ;
+	
+	@FindBy(xpath="//a[text()=\"Site Map\"]")
+	private WebElement Site_Map  ;
+	
+	@FindBy(xpath="//a[text()=\"Brands\"]")
+	private WebElement Brands ;
+	
+	@FindBy(xpath="//a[text()=\"Gift Certificates\"]")
+	private WebElement Gift_Certificates  ;
+	
+	@FindBy(xpath="//a[text()=\"Affiliate\"]")
+	private WebElement Affiliate ;
+	
 	
 	
 
@@ -200,7 +284,7 @@ public class RegisterScreenPage {
  	}
  	public  void varify_Register_TelephoneFiled_Sendkays(String value)
  	{
- 		 Telephone.sendKeys(value);
+       Telephone.sendKeys(value);
  	}
  	public void varify_Register_PasswordFiled_Sendkays(String value)
  	{
@@ -211,8 +295,6 @@ public class RegisterScreenPage {
  		 Password_Confirm.sendKeys(value);
  	}
  	
-	
-	
  	
 	
  
@@ -233,6 +315,8 @@ public class RegisterScreenPage {
 		 return Privacy_Policy_Link.getText();
 		
 	}
+	
+	
 
 	public void Privacy_Policy_checkbox_()
 	{
@@ -258,6 +342,62 @@ public class RegisterScreenPage {
 		
 	}
 	
+	// warning message 
+	 //Telephone_warning_message
+     //Password_warning_message
+       //Password_warning_message
+       //Privacy_Policy_warning_message
+
+	
+	public String varify_First_Name_warning_message()
+	{
+		
+		return First_Name_warning_message.getText() ;  //Last_Name_warning_message
+		
+	}
+	
+	public String varify_Last_Name_warning_message()
+	{
+		
+		return Last_Name_warning_message.getText();
+		
+	}
+	public String varify_Telephone_warning_message()
+	{
+		
+		return Telephone_warning_message.getText();
+		
+	}
+	public String varify_Password_warning_message()
+	{
+		
+		return Password_warning_message.getText();
+		
+	}
+	public String varify_E_Mail_warning_message()
+	{
+		
+		return E_Mail_warning_message.getText();
+		
+	}
+	public String varify_Privacy_Policy_warning_message()
+	{
+		
+		return Privacy_Policy_warning_message.getText();
+		
+	}
+	
+	public String varify_E_Mail_warning_message_already_registered()
+	{
+		
+		return E_Mail_warning_message_already_registered.getText();
+		
+	}
+	
+	
+	
+	
+	
 	
 	
 	
@@ -268,6 +408,149 @@ public class RegisterScreenPage {
 		Continue_btn.click();
 		
  	}
+	
+	public void  varify_login_pageLink_click()
+	{
+          login_pageTxt.click();  // Yes_radio_btn 
+		
+	}
+	
+	
+	
+	public void  varify_Yes_radio_btn_click()
+	{
+		Yes_radio_btn .click();  
+		
+	}
+	
+
+	public void  varify_Subscribe_unsubscribe_to_newsletter_click()
+	{
+		Subscribe_unsubscribe_to_newsletter .click();  
+		
+	}
+	
+	public void  varify_My_Account_click()
+	{
+		My_Account.click();  
+		
+	}
+	
+	public void  varify_My_Account_dropdownmenu_click()
+	{
+		My_Account_dropdownmenu.click();  
+		
+	}
+	
+	
+	
+	public void  varify_Register_dropdownmenu_click()
+	{
+		Register_dropdownmenu .click();  
+		
+	}
+	
+	public void  varify_New_Customer_Continue_click()
+	{
+		New_Customer_Continue.click();  
+		
+	}
+	
+
+	public void  actionclass_TabKey_click()
+	{
+		ActionClassGenericMethod ac=new ActionClassGenericMethod();
+		
+		ac.tab_keyByUsingActionClass(driver);
+		 
+		
+	}
+	
+
+	public void  actionclass_EnterKey_click()
+	{
+		ActionClassGenericMethod ac=new ActionClassGenericMethod();
+		
+		ac.Enter_keyByUsingActionClass(driver);
+		 
+		
+	}
+	
+/*	About_Us, Delivery , Privacy ,Policy Terms & Conditions ,Customer Service  ,Contact Us ,Returns ,Site Map 
+	Brands
+	Gift Certificates
+	Affiliate
+	Specials
+	
+	*/
+
+	public void About_Us_click()
+	{
+		WaitGenericMethod wait =new WaitGenericMethod();
+		ActionClassGenericMethod ac=new ActionClassGenericMethod();
+		wait.waitForInVisibilityByType(driver, 15, "xpath", "//a[text()=\"About Us\"]");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();",About_Us);
+		About_Us.click();	 
+		
+	}
+
+	public void  Delivery_Information_click()
+	{
+		 Delivery_Information.click();	 
+		
+	}
+
+	public void  Terms_Conditions_click()
+	{
+		Terms_Conditions.click();	 
+		
+	}
+
+	public void  Privacy_Policy_click()
+	{
+		Privacy_Policy.click();	 
+		
+	}
+
+	public void  Contact_Us_click()
+	{
+		Contact_Us.click();
+		
+	}
+
+	public void  Returns_click()
+	{
+			 
+		Returns.click();
+	}
+
+	public void  Site_Map_click()
+	{
+		Site_Map.click();	 
+		
+	}
+
+	public void  Brands_click()
+	{
+			 
+		Brands.click();
+	}
+
+	public void  Gift_Certificates_click()
+	{
+			 
+		Gift_Certificates.click();
+	}
+
+	public void  Affiliate_click()
+	{
+		Affiliate.click(); 
+		
+	}
+
+	
+	
 	
 	
 	

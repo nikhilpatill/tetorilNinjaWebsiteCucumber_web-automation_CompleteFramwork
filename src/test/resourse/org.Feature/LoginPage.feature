@@ -1,6 +1,6 @@
 Feature: Loginpage Feature
 
-  @nikhil
+ 
   Scenario: verify Login page
     Given user_is_on_login_page
     Then varify Login "PasswordFiled" ISDisplayed
@@ -10,11 +10,11 @@ Feature: Loginpage Feature
     And varify Login "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=account/login"
     And varify Login "Txt" IsDisplayed "Returning Customer"
     
-
+@nikhil
   Scenario: varify Login Functionality
     Given user_is_on_login_page
-    When varify Login "EmailFiled" Sendkeys "pragatipatil7798@gmail.com"
-    And varify Login "PasswordFiled" Sendkeys "nik@123"
+    When varify Login "EmailFiled" Sendkeys "sagrl@gmail.com"
+    And varify Login "PasswordFiled" Sendkeys "sag@123"
     Then varify Login Click
     And varify Login "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=account/account"
 

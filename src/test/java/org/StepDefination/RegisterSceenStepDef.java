@@ -2,9 +2,11 @@
 
 package org.StepDefination;
 
+import org.ActionClassUtility.ActionClassGenericMethod;
 import org.BaseUtility.startUp;
 import org.POMPages.LoginScreenPage;
 import org.POMPages.RegisterScreenPage;
+import org.WaitUtility.WaitGenericMethod;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -50,6 +52,7 @@ public class RegisterSceenStepDef {
 	@After(order=5) // hooks after exicute each senario
 	public void afterhook() {
 	
+		
 	}
 
 	
@@ -125,6 +128,85 @@ public class RegisterSceenStepDef {
 	   
 	}
 
+	
+	@Then("varify Loginpage Url IsDisplayed {string}")
+	public void varify_Loginpage_Url_is_displayed(String Expectedfiled) {
+		
+			
+			 ac.assertEquals(Rp.varify_Register_Url(),Expectedfiled);
+			 scn.log("expected condition pass"+Expectedfiled);
+			
+		
+		
+	}
+	
+	@Then("varify register {string} warning_message IsDisplayed {string}")
+	public void varify_register_warning_messageis_displayed(String LoginpageFileds, String Expectedfiled) {
+		
+		if(LoginpageFileds.equalsIgnoreCase("First_Name"))
+		{
+			
+			 ac.assertEquals(Rp.varify_First_Name_warning_message(),Expectedfiled);
+			scn.log("expected condition pass"+Expectedfiled);
+			
+		}
+		if(LoginpageFileds.equalsIgnoreCase("First_Name"))
+		{
+			
+			 ac.assertEquals(Rp.varify_First_Name_warning_message(),Expectedfiled);
+			scn.log("expected condition pass"+Expectedfiled);
+			
+		}
+		if(LoginpageFileds.equalsIgnoreCase("Last_Name"))
+		{
+			
+			 ac.assertEquals(Rp.varify_Last_Name_warning_message(),Expectedfiled);
+			scn.log("expected condition pass"+Expectedfiled);
+			
+		}
+		if(LoginpageFileds.equalsIgnoreCase("E_Mail"))
+		{
+			
+			 ac.assertEquals(Rp.varify_E_Mail_warning_message(),Expectedfiled);
+			scn.log("expected condition pass"+Expectedfiled);
+			
+		}
+		
+		if(LoginpageFileds.equalsIgnoreCase("message_already_registered"))
+		{
+			
+			 ac.assertEquals(Rp.varify_E_Mail_warning_message_already_registered(),Expectedfiled);
+			scn.log("expected condition pass"+Expectedfiled);
+			
+		}
+		if(LoginpageFileds.equalsIgnoreCase("Telephone"))
+		{
+			
+			 ac.assertEquals(Rp.varify_Telephone_warning_message(),Expectedfiled);
+			scn.log("expected condition pass"+Expectedfiled);
+			
+		}
+		if(LoginpageFileds.equalsIgnoreCase("Password"))
+		{
+			
+			 ac.assertEquals(Rp.varify_Password_warning_message(),Expectedfiled);
+			scn.log("expected condition pass"+Expectedfiled);
+			
+		}
+		
+		if(LoginpageFileds.equalsIgnoreCase("Privacy_Policy"))
+		{
+			
+			 ac.assertEquals(Rp.varify_Privacy_Policy_warning_message(),Expectedfiled);
+			scn.log("expected condition pass"+Expectedfiled);
+			
+		}
+		
+	}
+	
+	
+	
+	
 	@Then("varify register {string} IsDisplayed {string}")
 	public void varify_register_is_displayed(String LoginpageFileds, String Expectedfiled) {
 		
@@ -135,13 +217,13 @@ public class RegisterSceenStepDef {
 			scn.log("expected condition pass"+Expectedfiled);
 			
 		}
-	/*	if(LoginpageFileds.equalsIgnoreCase("NewsletterTxt"))
+		if(LoginpageFileds.equalsIgnoreCase("login_page_Link"))
 		{
 			
-		      ac.assertEquals(Rp.NewsletteTxtr(),Expectedfiled, Expectedfiled);
+		      ac.assertEquals(Rp.varify_login_pageTxt(), Expectedfiled);
 			 scn.log("expected condition pass"+Expectedfiled);
 				
-		}*/
+		}
 		
 		if(LoginpageFileds.equalsIgnoreCase("RegisterAccountTxt"))
 		{
@@ -174,10 +256,13 @@ public class RegisterSceenStepDef {
 		     scn.log("expected condition pass"+Expectedfiled);
 				
 		}
-	   
+		
+		
 		ac.assertAll();
 
 	}
+	
+
 	
 	@When("varify register {string} Sendkeys {string}")
 	public void varify_register_Sendkeys(String LoginpageFileds, String  Expectedfiled) {
@@ -204,6 +289,7 @@ public class RegisterSceenStepDef {
 			scn.log("expected condition pass"+Expectedfiled);
 				
 		}
+		
 		if(LoginpageFileds.equalsIgnoreCase("Telephone"))
 		{
 			
@@ -211,6 +297,7 @@ public class RegisterSceenStepDef {
 			scn.log("expected condition pass"+Expectedfiled);
 				
 		}
+		
 		if(LoginpageFileds.equalsIgnoreCase("Password"))
 		{
 			
@@ -233,6 +320,81 @@ public class RegisterSceenStepDef {
 		
 	}
 	
+	//------------------footer links ------------------------------
+	@Then("varify {string} Clickk")
+	public void varify_about_us_clickk(String Linkname) {
+		
+		if(Linkname.equalsIgnoreCase("About_Us"))
+		{
+			
+		  Rp.About_Us_click();
+		}
+		
+
+		if(Linkname.equalsIgnoreCase(""))
+		{
+		  
+		}
+	  
+
+		if(Linkname.equalsIgnoreCase(""))
+		{
+		   
+		}
+	  
+
+		if(Linkname.equalsIgnoreCase(""))
+		{
+		  
+		}
+	  
+
+		if(Linkname.equalsIgnoreCase(""))
+		{
+		   
+		}
+	  
+
+		if(Linkname.equalsIgnoreCase(""))
+		{
+		   Rp.About_Us_click();
+		}
+	  
+
+		if(Linkname.equalsIgnoreCase(""))
+		{
+		   Rp.About_Us_click();
+		}
+
+		if(Linkname.equalsIgnoreCase(""))
+		{
+		   Rp.About_Us_click();
+		}
+
+		if(Linkname.equalsIgnoreCase(""))
+		{
+		   Rp.About_Us_click();
+		}
+
+		if(Linkname.equalsIgnoreCase(""))
+		{
+		  
+		}
+
+		if(Linkname.equalsIgnoreCase(""))
+		{
+		  
+		}
+	  
+	}
+	
+	//-------------------------------------------------------
+	
+	
+	
+	
+	
+	
 	@Then("varify Subscribe Click")
 	public void varify_Subscribe_click() {
 		Rp.Subscribe_radio_Click();
@@ -245,12 +407,64 @@ public class RegisterSceenStepDef {
 	}
 	
 
+	@Then("varify New_Customer_Continue Click")
+	public void New_Customer_Continue_click() {
+		Rp.varify_New_Customer_Continue_click();
+	}
+	
 	@Then("varify Continue Click")
 	public void Continue_click() {
 		Rp.Continue_btn_Click();
 	}
 	
 
+	@Then("varify TabKey Click")
+	public void TabKey_click() {
+		Rp.actionclass_TabKey_click();;
+	}
+	
+
+	@Then("varify EnterKey Click")
+	public void EnterKey_click() {
+		Rp.actionclass_EnterKey_click();;
+	}
+	
+	
+	
+	@Then("varify My Account Click")
+	public void My_Account_click() {
+		Rp.varify_My_Account_click();
+	}
+	
+
+	@Then("varify Register_dropdownmenu Click")
+	public void Register_dropdownmenu_click() {
+		Rp.varify_Register_dropdownmenu_click();
+	}
+	
+	@Then("varify My Accoun_dropdownmenut Click")
+	public void varify_my_accoun_dropdownmenut_click() {
+		Rp.varify_My_Account_dropdownmenu_click();
+	}
+	
+	
+	@Then("varify Subscribe yes_Radio_btn Click")  
+	public void Subscribe_yes_Radio_btn_click() {
+		Rp.varify_Yes_radio_btn_click();;
+	}
+	
+	
+	 @Then("varify Subscribe unsubscribe to newsletter Click")  
+		public void Subscribe_unsubscribe_to_newsletter_click() {
+			Rp.varify_Subscribe_unsubscribe_to_newsletter_click();
+		}
+	
+
+	@Then("varify LoginTxt_Link Click")
+	public void LoginTxt_Link() {
+		Rp.Continue_btn_Click();
+	}
+	
 	  
 	   
 	@Then("Verify {string} register_page palceholder {string}")
