@@ -16,13 +16,13 @@ Feature: register page
     And varify register "login_page_Link" IsDisplayed "login page"
     And varify register "Privacy_Policy_Link" IsDisplayed "Privacy Policy"
 
- 
+ @nikhil
   Scenario: varify register Functionality
     Given user_is_on_register_page
-    When varify register "First_Name" Sendkeys "sagar"
+    When varify register "First_Name" Sendkeys "sagauuyyr"
     And varify register "Last_Name" Sendkeys "patil"
-    And varify register "E_Mail" Sendkeys "sagrl@gmail.com"
-    And varify register "Telephone" Sendkeys "7798564646"
+    And varify register "E_Mail" Sendkeys "sagrludku@gmail.com"
+    And varify register "Telephone" Sendkeys 7798564646
     And varify register "Password" Sendkeys "sag@123"
     And varify register "Password_Confirm" Sendkeys "sag@123"
     Then varify Subscribe Click
@@ -30,7 +30,7 @@ Feature: register page
     And varify Continue Click
     And varify register "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=account/success"
     
-    @nikhil
+  
      Scenario: varify register Functionality First Name is blank
     Given user_is_on_register_page
     When varify register "First_Name" Sendkeys ""

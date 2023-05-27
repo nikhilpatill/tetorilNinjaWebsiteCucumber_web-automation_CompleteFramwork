@@ -12,7 +12,7 @@ import io.cucumber.junit.*;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		
-		features ="src/test/resourse/org.Feature/Register.feature",
+		features ="src/test/resourse/org.Feature/Search.feature",
 		
 		glue={ "org/StepDefination" },
 		
@@ -27,7 +27,7 @@ import io.cucumber.junit.*;
 		
 		dryRun=false,
 		
-		tags="@nikhil"
+	tags="@nikhil"
 		
 	
 		

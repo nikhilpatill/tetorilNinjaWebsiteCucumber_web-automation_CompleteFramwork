@@ -58,7 +58,18 @@ public class startUp {
 	}
 
 	
-	
+	public ArrayList<String> getAlltabNames(List<WebElement>allEle)
+	{
+		ArrayList<String> al =new ArrayList<String>();
+		
+		for(int i=0;i<allEle.size();i++)
+		{
+			
+			al.add(allEle.get(i).getText());
+		}
+		return al;
+		
+	}
 
 
 

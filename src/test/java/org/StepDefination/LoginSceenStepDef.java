@@ -53,6 +53,7 @@ public class LoginSceenStepDef {
 	@After(order=5) // hooks after exicute each senario
 	public void afterhook() {
 		
+		driver.quit();
 
 	}
 
@@ -84,7 +85,7 @@ public class LoginSceenStepDef {
 	
 	@Given("user_is_on_login_page")
 	public void user_is_on_login_page() {
-		lp = new LoginScreenPage(driver);
+	lp = new LoginScreenPage(driver);
 		
 		lp.My_AccountTXT_Click();
 		 lp.LoginTXT_Click();
@@ -143,6 +144,15 @@ public class LoginSceenStepDef {
 	   
 		ac.assertAll();
 
+	}
+	
+	@When("varify Login EmailFiled Sendkeys {string}")
+	public void varify_login_email_filed_sendkeys(String string) {
+		lp.varify_Login_UsernameFiled_Sendkays(string);
+	}
+	@When("varify Login PasswordFiled Sendkeys {string}")
+	public void varify_login_password_filed_sendkeys(String string) {
+		lp.varify_Login_PasswordFiled_sendKeys(string);
 	}
 	
 	@When("varify Login {string} Sendkeys {string}")

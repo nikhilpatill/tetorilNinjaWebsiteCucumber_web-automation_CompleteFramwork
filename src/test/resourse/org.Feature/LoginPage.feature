@@ -13,8 +13,8 @@ Feature: Loginpage Feature
 @nikhil
   Scenario: varify Login Functionality
     Given user_is_on_login_page
-    When varify Login "EmailFiled" Sendkeys "sagrl@gmail.com"
-    And varify Login "PasswordFiled" Sendkeys "sag@123"
+    When varify Login EmailFiled Sendkeys "sagrl@gmail.com"
+    And varify Login PasswordFiled Sendkeys "sag@123"
     Then varify Login Click
     And varify Login "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=account/account"
 
