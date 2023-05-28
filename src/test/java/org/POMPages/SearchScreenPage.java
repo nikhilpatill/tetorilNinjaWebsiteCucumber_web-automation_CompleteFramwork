@@ -40,6 +40,18 @@ public class SearchScreenPage {
 	@FindBy(xpath="	//a[text()='Laptops & Notebooks']")
     private WebElement Laptops_NotebooksTxt ;
 	
+	//button[@onclick="cart.add('41', '1');"]
+	@FindBy(xpath="//button[@onclick=\"wishlist.add('41');\"]")
+    private WebElement wishlist_add_;
+	
+	@FindBy(xpath="//button[@onclick=\"cart.add('41', '1');\"]")
+    private WebElement ADD_TO_Cart_;
+	
+	//div[@class="alert alert-success alert-dismissible"]
+	@FindBy(xpath="//div[@class=\"alert alert-success alert-dismissible\"]")
+    private WebElement ADD_TO_Cart_OR_wishlist_add_Message;
+	
+	
 	
 	@FindBy(xpath="//ul[@class=\"nav navbar-nav\"]/li[1]//ul[@class=\"list-unstyled\"]/li")
 	private List<WebElement> DesktopsLinkDropdownProductName;
@@ -125,6 +137,13 @@ public class SearchScreenPage {
 		
 	}
 	
+	public String ADD_TO_Cart_OR_wishlist_add_Message()
+	{
+		
+		return ADD_TO_Cart_OR_wishlist_add_Message.getText();
+		
+	}
+	
 	
 	
 	public void SearchBTN_Click()
@@ -132,6 +151,21 @@ public class SearchScreenPage {
 		SearchBTN.click();
 	}
 	
+	
+	
+	public void ADD_TO_Cart_Click()
+	{
+		ADD_TO_Cart_.click();
+	}
+	
+	
+	
+	
+
+	public void WishList_add_Click() {
+		
+		wishlist_add_.click();
+	}
 	
 	
 	public void CategoryBoxClick_Click()
@@ -306,6 +340,13 @@ public class SearchScreenPage {
 	
 		
  	}
+
+
+
+
+
+
+
 	
 	
 	

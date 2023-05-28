@@ -12,7 +12,7 @@ import io.cucumber.junit.*;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		
-		features ="src/test/resourse/org.Feature/Search.feature",
+		features ="src/test/resourse/org.Feature/ADDTOCart.feature",
 		
 		glue={ "org/StepDefination" },
 		

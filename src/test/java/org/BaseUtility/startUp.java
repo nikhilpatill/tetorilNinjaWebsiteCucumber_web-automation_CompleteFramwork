@@ -116,10 +116,11 @@ public class startUp {
 		driver.get(Url);
 
 		return driver;
+		
 
 	}
 	
-	public ArrayList<String> getAllTextFromList(List<WebElement> allEles) {
+	public ArrayList<String>getAllTextFromList(List<WebElement> allEles) {
 		
 		 ArrayList<String> ar = new ArrayList<String>();
 		 for(int i=0; i<allEles.size();i++) {
@@ -128,6 +129,14 @@ public class startUp {
 		 return ar;
 	}
 	
+	public ArrayList<String>getAllTextFromList2(List<WebElement> allEles) {
+		
+		 ArrayList<String> ar = new ArrayList<String>();
+		 for(int i=0; i<=allEles.size()-1;i++) {
+			ar.add(allEles.get(i).getText());
+		 }
+		 return ar;
+	}
 
 	public WebDriver initalize(String bname) {
 

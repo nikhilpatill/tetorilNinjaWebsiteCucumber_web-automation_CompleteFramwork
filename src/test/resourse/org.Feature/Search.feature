@@ -21,13 +21,34 @@ Feature: Search functionality
     Then varify Search "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=product/search&search=Fitbit"
     Then varify Search "title" IsDisplayed "Search - Fitbit"
     
-@nikhil
+
   Scenario: User searches for a valid product it display more then one product.
     When varify Search Sendkeys "mac"
     Then varify SearchBtn Click
     Then varify Search "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=product/search&search=mac"
     Then varify Search "title" IsDisplayed "Search - mac"
     Then varify Search productCount IsDisplayed graterthen 1
+    
+    
+   @nikhil
+ Scenario: User searches for a valid product it display more then one product.
+    When varify Search Sendkeys "mac"
+    Then varify SearchBtn Click
+    Then varify Search "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=product/search&search=mac"
+    Then varify Search "title" IsDisplayed "Search - mac"
+    Then varify Search productCount IsDisplayed graterthen 1
+    Then varify ADD_TO_Cart_ Click
+   
+    
+Scenario: User searches for a valid product it display more then one product.
+    When varify Search Sendkeys "mac"
+    Then varify SearchBtn Click
+    Then varify Search "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=product/search&search=mac"
+    Then varify Search "title" IsDisplayed "Search - mac"
+    Then varify Search productCount IsDisplayed graterthen 1
+    Then varify Wish_List_ADD_ Click
+ 
+    
 
   Scenario: User searches for a search exixting roduct  product
     When varify Search Sendkeys ""
@@ -69,7 +90,7 @@ Feature: Search functionality
     When varify categorybox Sendkeys "mac"
     Then varify  categorydropdownBox Click
     Then varify  categorydropdownOption "All Categories","Desktops","      PC","      Mac","Laptops & Notebooks","      Macs","      Windows","Components"   
-
+@nikhil
   Scenario: Verify the Sorted-By DropdownList Options
     When varify Search Sendkeys ""
     Then varify SearchBtn Click

@@ -90,6 +90,35 @@ public class SearchSceenStepDef<CategoryBoxoptionName> {
 		sp.SearchBTN_Click();
 	}
 	
+	
+	 @Then("varify ADD_TO_Cart_ Click")
+		public void varify_ADD_TO_Cart__click() {
+			sp.ADD_TO_Cart_Click();
+		}
+		
+	 @Then("varify Wish_List_ADD_ Click")
+		public void varify_Wish_List_ADD__click() {
+			
+		 sp.WishList_add_Click();
+		}
+		
+	 
+	 @Then("varify ADD_TO_Cart_Message {string}")
+	 public void varify_add_to_cart_message(String string) {
+	   
+		 ac.assertEquals(sp.ADD_TO_Cart_OR_wishlist_add_Message(), string);
+		 ac.assertAll();
+	 }
+	 
+	 @Then("varify wishlist_ADD_Message {string}")
+	 public void varify_wishlist_add_message(String string) {
+	    
+		 ac.assertEquals(sp.ADD_TO_Cart_OR_wishlist_add_Message(), string);
+		 ac.assertAll();
+	 }
+
+
+	
 	@When("varify Search Sendkeys {string}")
 	public void varify_Search_sendkeys(String string) {
 		sp.varify_SearchBox_Sendkays(string);
