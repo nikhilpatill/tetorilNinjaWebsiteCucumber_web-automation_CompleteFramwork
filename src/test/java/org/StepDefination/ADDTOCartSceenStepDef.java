@@ -172,14 +172,29 @@ driver.quit();
 	  ac.assertEquals(cp.Warning_Gift(), string);
 	}
 	
+
+	@When("varify Searchh Sendkeyss {string}")
+	public void varify_Searchh_sendkeyss(String string) {
+		cp.varify_SearchBox_Sendkays(string);
+	}
 	
+	
+	@Then("varify SearchBtnn Clickk")
+	public void varify_SearchBtnn_click() {
+		cp.SearchBTN_Click();
+	}
+
+	 @Then("varify ADD_TO_Cart_ Clickkk")
+		public void varify_ADD_TO_Cart__clickkk() {
+			cp.ADD_TO_Cart_Click();
+		}
 	
 	
 	
 	
 
-	@Then("varify CheckoutBtn Clickk")
-	public void varify_CheckoutBtn_clickk() {
+	@Then("varify CheckoutBtn Clickkk")
+	public void varify_CheckoutBtn_clickkk() {
 	    
 		  cp.CheckoutBtn_Click();
 	}

@@ -22,7 +22,7 @@ Feature: register page
     When varify register "First_Name" Sendkeys "sagauuyyr"
     And varify register "Last_Name" Sendkeys "patil"
     And varify register "E_Mail" Sendkeys "sagrludku@gmail.com"
-    And varify register "Telephone" Sendkeys 7798564646
+    And varify register "Telephone" Sendkeys "7798564646"
     And varify register "Password" Sendkeys "sag@123"
     And varify register "Password_Confirm" Sendkeys "sag@123"
     Then varify Subscribe Click

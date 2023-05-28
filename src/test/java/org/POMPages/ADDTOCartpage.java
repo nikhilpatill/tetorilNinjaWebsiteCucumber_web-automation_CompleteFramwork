@@ -96,7 +96,15 @@ public class ADDTOCartpage {
 	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']")
 	private WebElement Warning_Gift_blank;
 	
-	//div[@class='alert alert-danger alert-dismissible']
+	@FindBy(xpath="//div[@id=\"search\"]/input[@name=\"search\"]")
+	private WebElement SearchBox ;
+	
+	@FindBy(xpath="//button[@onclick=\"cart.add('41', '1');\"]")
+    private WebElement ADD_TO_Cart_;
+	
+	@FindBy(xpath="//span[@class=\"input-group-btn\"]/button/i")
+    private WebElement SearchBTN1;
+	
 	
 	
 
@@ -127,6 +135,24 @@ public class ADDTOCartpage {
 		LoginTXT.click();
 	}
 	
+	
+	public void varify_SearchBox_Sendkays(String value)
+ 	{
+		SearchBox.sendKeys(value);
+		
+ 		
+ 	}
+	
+	public void SearchBTN()
+	{
+		SearchBTN1.click();
+	}
+	
+	
+	public void ADD_TO_Cart_Click()
+	{
+		ADD_TO_Cart_.click();
+	}
 	
 	
 	

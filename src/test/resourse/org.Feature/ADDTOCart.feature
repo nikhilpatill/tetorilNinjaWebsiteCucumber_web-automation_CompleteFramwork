@@ -6,7 +6,10 @@ Feature: ADD_TO_CART functionality
     And varify ADD_TO_CART PasswordFiled Sendkeys "sag@123"
     Then varify ADD_TO_CART Click
     And varify ADD_TO_CART "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=account/account"
-    
+    When varify Searchh Sendkeyss "mac"
+    Then varify SearchBtnn Clickk
+    Then varify ADD_TO_CART "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=product/search&search=mac"
+    Then varify ADD_TO_Cart_ Clickkk
   
     Scenario: Product Display in the Wish_List page
     Then varify ADD_TO_CART Clickk
@@ -37,7 +40,7 @@ Feature: ADD_TO_CART functionality
     Then varify ADD_TO_CART Clickk
     Then varify ADD_TO_CART "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=checkout/cart"
     And varify ADD_TO_CART "Title" IsDisplayed "Shopping Cart"
-    Then varify CheckoutBtn Clickk
+    Then varify CheckoutBtn Clickkk
     And varify ADD_TO_CART "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=checkout/cart"
     
     
@@ -64,8 +67,9 @@ Feature: ADD_TO_CART functionality
     
      
      
-    
-   #Then varify ADD_TO_CART Clickk
+   
+    #Scenario: Product Display in the CheckoutBtn functionality 
+    #Then varify ADD_TO_CART Clickk
     #Then varify ADD_TO_CART "Url" IsDisplayed "https://tutorialsninja.com/demo/index.php?route=checkout/cart"
     #And varify ADD_TO_CART "Title" IsDisplayed "Shopping Cart"
     #Then varify Use_Gift_Certificate_txt_click Clickk
